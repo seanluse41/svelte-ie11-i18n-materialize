@@ -37,7 +37,9 @@ export default {
     }),
     commonjs(),
     babel({
-      extensions: [".js", ".mjs", ".html", ".svelte"],
+	  extensions: [".js", ".mjs", ".html", ".svelte"],
+	  // includes every svelte related file
+	  // if other libraries are used, include them here aswell
 	  include: ["src/**", "node_modules/svelte/**"],
 	  presets: [
         [

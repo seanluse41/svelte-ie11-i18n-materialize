@@ -6,7 +6,6 @@
     "dev": "rollup -c -w",
     "start": "sirv public"
   },
-  "browserslist": "> 0.25%, not dead",
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
@@ -22,6 +21,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "regenerator-runtime": "^0.13.5",
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^0.4.4",
+    "whatwg-fetch": "^3.0.0"
   }
 }
