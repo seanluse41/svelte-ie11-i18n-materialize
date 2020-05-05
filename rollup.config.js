@@ -4,6 +4,16 @@ import commonjs from "@rollup/plugin-commonjs";
 import babel from "@rollup/plugin-babel";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
+import autoPreprocess from "svelte-preprocess";
+
+const postCssOptions = {
+  postcss: {
+    plugins: [
+      require("autoprefixer"),
+      require("postcss-preset-env")
+    ],
+  },
+};
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -24,6 +34,7 @@ export default {
       css: (css) => {
         css.write("public/build/bundle.css");
       },
+      preprocess: autoPreprocess(postCssOptions),
     }),
 
     // If you have external dependencies installed from
@@ -37,21 +48,21 @@ export default {
     }),
     commonjs(),
     babel({
-	  extensions: [".js", ".mjs", ".html", ".svelte"],
-	  // includes every svelte related file
-	  // if other libraries are used, include them here aswell
-	  include: ["src/**", "node_modules/svelte/**"],
-	  presets: [
+      extensions: [".js", ".mjs", ".html", ".svelte"],
+      // includes every svelte related file
+      // if other libraries are used, include them here aswell
+      include: ["src/**", "node_modules/svelte/**"],
+      presets: [
         [
-          '@babel/preset-env',
+          "@babel/preset-env",
           {
             targets: {
-              ie: '11'
+              ie: "11",
             },
-            useBuiltIns: 'usage',
-            corejs: 3
-          }
-        ]
+            useBuiltIns: "usage",
+            corejs: 3,
+          },
+        ],
       ],
     }),
     // In dev mode, call `npm run start` once
