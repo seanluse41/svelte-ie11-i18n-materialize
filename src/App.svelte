@@ -17,15 +17,17 @@
 </script>
 
 <style>
+  /* set css variable test */
   :root {
     --color: #ff3e00;
   }
-  
+
   main {
     text-align: center;
     padding: 1em;
     max-width: 240px;
     margin: 0 auto;
+    scrollbar-color: red;
   }
 
   h1 {

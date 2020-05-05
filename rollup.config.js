@@ -8,7 +8,10 @@ import autoPreprocess from "svelte-preprocess";
 
 const postCssOptions = {
   postcss: {
-    plugins: [require("autoprefixer")],
+    plugins: [
+      require("autoprefixer"),
+      require("postcss-preset-env")
+    ],
   },
 };
 
