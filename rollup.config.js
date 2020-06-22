@@ -5,6 +5,7 @@ import babel from "@rollup/plugin-babel";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import autoPreprocess from "svelte-preprocess";
+import css from "rollup-plugin-css-only";
 
 const postCssOptions = {
   postcss: {
@@ -36,6 +37,8 @@ export default {
       },
       preprocess: autoPreprocess(postCssOptions),
     }),
+
+    css({ output: "public/extra.css" }),
 
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
