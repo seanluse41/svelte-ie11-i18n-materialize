@@ -29,6 +29,7 @@
     "materialize-css": "^1.0.0-rc.2",
     "regenerator-runtime": "^0.13.5",
     "sirv-cli": "^0.4.4",
+    "svelte-routing": "^1.4.2",
     "whatwg-fetch": "^3.0.0"
   },
   "browserslist": "last 2 versions"
