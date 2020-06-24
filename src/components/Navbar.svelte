@@ -1,4 +1,5 @@
 <script>
+  import { Link } from "svelte-routing";
   import { onMount } from "svelte";
   function mobileNav() {
     var elems = document.querySelectorAll(".sidenav");
@@ -17,13 +18,15 @@
       <i class="material-icons">menu</i>
     </a>
     <div class="container">
-        <span class="brand-logo">Phone to Desk</span>
+      <Link to="/">
+        <span class="brand-logo">Svelte ie11 i18n materialize Template</span>
+      </Link>
       <ul id="nav-mobile" class="right hide-on-small-only">
         <li>
-            <a href="http://www.seanbase.com">www.seanbase.com</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-            <a href="http://www.seanbase.com">www.seanbase.com</a>
+          <Link to="/about">About</Link>
         </li>
       </ul>
     </div>
@@ -32,10 +35,10 @@
 
 <ul class="sidenav" id="mobile-demo">
   <li>
-      <a href="http://www.seanbase.com">www.seanbase.com</a>
+    <Link to="/">Home</Link>
   </li>
   <li>
-    <a href="http://www.seanbase.com">www.seanbase.com</a>
+    <Link to="/about">About</Link>
   </li>
   <li>
     <a href="http://www.seanbase.com">www.seanbase.com</a>
